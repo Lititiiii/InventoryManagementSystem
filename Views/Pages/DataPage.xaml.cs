@@ -11,7 +11,7 @@ namespace InventoryManagementSystem.Views.Pages
         {
             ViewModel = viewModel;
             DataContext = this;
-
+            String test;
             InitializeComponent();
         }
     }
