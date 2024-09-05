@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ImEntitiesStoreContainer" CdmEntityContainer="ImEntities">
+    <EntitySetMapping Name="AccidentLevels">
+      <EntityTypeMapping TypeName="ImModel.AccidentLevel">
+        <MappingFragment StoreEntitySet="accident_levels">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="AccidentLevelName" ColumnName="accident_level_name" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccidentNatures">
+      <EntityTypeMapping TypeName="ImModel.AccidentNature">
+        <MappingFragment StoreEntitySet="accident_natures">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="AccidentNatureName" ColumnName="accident_nature_name" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccidentReports">
+      <EntityTypeMapping TypeName="ImModel.AccidentReport">
+        <MappingFragment StoreEntitySet="accident_reports">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="DeviceNumber" ColumnName="device_number" />
+          <ScalarProperty Name="AccidentDate" ColumnName="accident_date" />
+          <ScalarProperty Name="AccidentDepartmentId" ColumnName="accident_department_id" />
+          <ScalarProperty Name="AccidentLevelId" ColumnName="accident_level_id" />
+          <ScalarProperty Name="AccidentNature" ColumnName="accident_nature" />
+          <ScalarProperty Name="EconomicLoss" ColumnName="economic_loss" />
+          <ScalarProperty Name="AccidentProcess" ColumnName="accident_process" />
+          <ScalarProperty Name="AccidentInvestigation" ColumnName="accident_investigation" />
+          <ScalarProperty Name="PreventionSummary" ColumnName="prevention_summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentTables">
+      <EntityTypeMapping TypeName="ImModel.DepartmentTable">
+        <MappingFragment StoreEntitySet="department_tables">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="DepartmentName" ColumnName="department_name" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentManagements">
+      <EntityTypeMapping TypeName="ImModel.DocumentManagement">
+        <MappingFragment StoreEntitySet="document_managements">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="DeviceNumber" ColumnName="device_number" />
+          <ScalarProperty Name="DocumentName" ColumnName="document_name" />
+          <ScalarProperty Name="DocumentType" ColumnName="document_type" />
+          <ScalarProperty Name="UploadDate" ColumnName="upload_date" />
+          <ScalarProperty Name="DocumentAttachment" ColumnName="document_attachment" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentInfos">
+      <EntityTypeMapping TypeName="ImModel.EquipmentInfo">
+        <MappingFragment StoreEntitySet="equipment_infos">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="DeviceNumber" ColumnName="device_number" />
+          <ScalarProperty Name="DeviceName" ColumnName="device_name" />
+          <ScalarProperty Name="Quantity" ColumnName="quantity" />
+          <ScalarProperty Name="SpecificationModel" ColumnName="specification_model" />
+          <ScalarProperty Name="DeviceCategoryId" ColumnName="device_category_id" />
+          <ScalarProperty Name="DeviceImage" ColumnName="device_image" />
+          <ScalarProperty Name="Manufacturer" ColumnName="manufacturer" />
+          <ScalarProperty Name="TotalPower" ColumnName="total_power" />
+          <ScalarProperty Name="Distributor" ColumnName="distributor" />
+          <ScalarProperty Name="DeviceIdentifier" ColumnName="device_identifier" />
+          <ScalarProperty Name="PurchaseTime" ColumnName="purchase_time" />
+          <ScalarProperty Name="AssetOriginalValue" ColumnName="asset_original_value" />
+          <ScalarProperty Name="AssetManager" ColumnName="asset_manager" />
+          <ScalarProperty Name="ResidualValueRate" ColumnName="residual_value_rate" />
+          <ScalarProperty Name="DepreciationMonth" ColumnName="depreciation_month" />
+          <ScalarProperty Name="DeviceStatus" ColumnName="device_status" />
+          <ScalarProperty Name="UsingDepartmentId" ColumnName="using_department_id" />
+          <ScalarProperty Name="Operator" ColumnName="operator" />
+          <ScalarProperty Name="InstallationLocation" ColumnName="installation_location" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+          <ScalarProperty Name="AccumulatedDepreciationMonths" ColumnName="accumulated_depreciation_months" />
+          <ScalarProperty Name="MonthlyDepreciationAmount" ColumnName="monthly_depreciation_amount" />
+          <ScalarProperty Name="NetValue" ColumnName="net_value" />
+          <ScalarProperty Name="MonthlyDepreciationRate" ColumnName="monthly_depreciation_rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentMaintenanceRecords">
+      <EntityTypeMapping TypeName="ImModel.EquipmentMaintenanceRecord">
+        <MappingFragment StoreEntitySet="equipment_maintenance_records">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="MaintenanceOrderNumber" ColumnName="maintenance_order_number" />
+          <ScalarProperty Name="DeviceNumber" ColumnName="device_number" />
+          <ScalarProperty Name="MaintenanceCompleted" ColumnName="maintenance_completed" />
+          <ScalarProperty Name="MaintenanceApplicant" ColumnName="maintenance_applicant" />
+          <ScalarProperty Name="TimeOfRepair" ColumnName="time_of_repair" />
+          <ScalarProperty Name="FaultDescription" ColumnName="fault_description" />
+          <ScalarProperty Name="CompletionTime" ColumnName="completion_time" />
+          <ScalarProperty Name="MaintenanceLevel" ColumnName="maintenance_level" />
+          <ScalarProperty Name="MaintenanceCost" ColumnName="maintenance_cost" />
+          <ScalarProperty Name="MaintenanceResponsiblePerson" ColumnName="maintenance_responsible_person" />
+          <ScalarProperty Name="FaultAnalysisAndWorkDetails" ColumnName="fault_analysis_and_work_details" />
+          <ScalarProperty Name="Rating" ColumnName="rating" />
+          <ScalarProperty Name="FaultCategory" ColumnName="fault_category" />
+          <ScalarProperty Name="ReasonForRejection" ColumnName="reason_for_rejection" />
+          <ScalarProperty Name="RecordCount" ColumnName="record_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentMaintenanceReplacementSpareParts">
+      <EntityTypeMapping TypeName="ImModel.EquipmentMaintenanceReplacementSparePart">
+        <MappingFragment StoreEntitySet="equipment_maintenance_replacement_spare_parts">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="SparePartNumberId" ColumnName="spare_part_number_id" />
+          <ScalarProperty Name="MaintenanceOrderNumberId" ColumnName="maintenance_order_number_id" />
+          <ScalarProperty Name="UsageQuantity" ColumnName="usage_quantity" />
+          <ScalarProperty Name="UsageDate" ColumnName="usage_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipmentTypes">
+      <EntityTypeMapping TypeName="ImModel.EquipmentType">
+        <MappingFragment StoreEntitySet="equipment_types">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="EquipmentTypeName" ColumnName="equipment_type_name" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FaultCategories">
+      <EntityTypeMapping TypeName="ImModel.FaultCategory">
+        <MappingFragment StoreEntitySet="fault_categories">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="FaultName" ColumnName="fault_name" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstallationLocationInfos">
+      <EntityTypeMapping TypeName="ImModel.InstallationLocationInfo">
+        <MappingFragment StoreEntitySet="installation_location_infos">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="LocationName" ColumnName="location_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MaintenanceLevels">
+      <EntityTypeMapping TypeName="ImModel.MaintenanceLevel">
+        <MappingFragment StoreEntitySet="maintenance_levels">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="MaintenanceLevelName" ColumnName="maintenance_level_name" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartnerInfos">
+      <EntityTypeMapping TypeName="ImModel.PartnerInfo">
+        <MappingFragment StoreEntitySet="partner_infos">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="UnitNumber" ColumnName="unit_number" />
+          <ScalarProperty Name="UnitName" ColumnName="unit_name" />
+          <ScalarProperty Name="UnitTypeId" ColumnName="unit_type_id" />
+          <ScalarProperty Name="ContactPerson" ColumnName="contact_person" />
+          <ScalarProperty Name="ContactPhone" ColumnName="contact_phone" />
+          <ScalarProperty Name="Fax" ColumnName="fax" />
+          <ScalarProperty Name="TaxNumber" ColumnName="tax_number" />
+          <ScalarProperty Name="Address" ColumnName="address" />
+          <ScalarProperty Name="PostalCode" ColumnName="postal_code" />
+          <ScalarProperty Name="Email" ColumnName="email" />
+          <ScalarProperty Name="BankName" ColumnName="bank_name" />
+          <ScalarProperty Name="Account" ColumnName="account" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+          <ScalarProperty Name="TotalPartners" ColumnName="total_partners" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartInfos">
+      <EntityTypeMapping TypeName="ImModel.SparePartInfo">
+        <MappingFragment StoreEntitySet="spare_part_infos">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="SparePartNumber" ColumnName="spare_part_number" />
+          <ScalarProperty Name="SparePartName" ColumnName="spare_part_name" />
+          <ScalarProperty Name="SpecificationModel" ColumnName="specification_model" />
+          <ScalarProperty Name="SparePartImage" ColumnName="spare_part_image" />
+          <ScalarProperty Name="SparePartTypeId" ColumnName="spare_part_type_id" />
+          <ScalarProperty Name="UnitOfMeasurement" ColumnName="unit_of_measurement" />
+          <ScalarProperty Name="UnitPrice" ColumnName="unit_price" />
+          <ScalarProperty Name="Manufacturer" ColumnName="manufacturer" />
+          <ScalarProperty Name="Distributor" ColumnName="distributor" />
+          <ScalarProperty Name="StorageLocation" ColumnName="storage_location" />
+          <ScalarProperty Name="CurrentInventory" ColumnName="current_inventory" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartInventoryChangeHistories">
+      <EntityTypeMapping TypeName="ImModel.SparePartInventoryChangeHistory">
+        <MappingFragment StoreEntitySet="spare_part_inventory_change_histories">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="SparePartNumber" ColumnName="spare_part_number" />
+          <ScalarProperty Name="Operator" ColumnName="operator" />
+          <ScalarProperty Name="OperationTime" ColumnName="operation_time" />
+          <ScalarProperty Name="InventoryChangeType" ColumnName="inventory_change_type" />
+          <ScalarProperty Name="InventoryChangeReasonId" ColumnName="inventory_change_reason_id" />
+          <ScalarProperty Name="InitialInventory" ColumnName="initial_inventory" />
+          <ScalarProperty Name="ChangeQuantity" ColumnName="change_quantity" />
+          <ScalarProperty Name="ChangeHistoryTotal" ColumnName="change_history_total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartInventoryChangeReasons">
+      <EntityTypeMapping TypeName="ImModel.SparePartInventoryChangeReason">
+        <MappingFragment StoreEntitySet="spare_part_inventory_change_reasons">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="InventoryChangeType" ColumnName="inventory_change_type" />
+          <ScalarProperty Name="ChangeName" ColumnName="change_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartInventoryChecks">
+      <EntityTypeMapping TypeName="ImModel.SparePartInventoryCheck">
+        <MappingFragment StoreEntitySet="spare_part_inventory_checks">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="CheckNumber" ColumnName="check_number" />
+          <ScalarProperty Name="CheckDate" ColumnName="check_date" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+          <ScalarProperty Name="Operator" ColumnName="operator" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartInventoryCheckDetails">
+      <EntityTypeMapping TypeName="ImModel.SparePartInventoryCheckDetail">
+        <MappingFragment StoreEntitySet="spare_part_inventory_check_details">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="CheckId" ColumnName="check_id" />
+          <ScalarProperty Name="SparePartNumber" ColumnName="spare_part_number" />
+          <ScalarProperty Name="InventoryQuantity" ColumnName="inventory_quantity" />
+          <ScalarProperty Name="ActualCountQuantity" ColumnName="actual_count_quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SparePartTypes">
+      <EntityTypeMapping TypeName="ImModel.SparePartType">
+        <MappingFragment StoreEntitySet="spare_part_types">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitOfMeasurements">
+      <EntityTypeMapping TypeName="ImModel.UnitOfMeasurement">
+        <MappingFragment StoreEntitySet="unit_of_measurements">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UnitTypes">
+      <EntityTypeMapping TypeName="ImModel.UnitType">
+        <MappingFragment StoreEntitySet="unit_types">
+          <ScalarProperty Name="Id" ColumnName="id" />
+          <ScalarProperty Name="UnitTypeName" ColumnName="unit_type_name" />
+          <ScalarProperty Name="Remarks" ColumnName="remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoViews">
+      <EntityTypeMapping TypeName="ImModel.UserInfoView">
+        <MappingFragment StoreEntitySet="user_info_views">
+          <ScalarProperty Name="Username" ColumnName="username" />
+          <ScalarProperty Name="FullName" ColumnName="full_name" />
+          <ScalarProperty Name="Email" ColumnName="email" />
+          <ScalarProperty Name="Active" ColumnName="active" />
+          <ScalarProperty Name="Role" ColumnName="role" />
+          <ScalarProperty Name="OrganizationSuperior" ColumnName="organization_superior" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

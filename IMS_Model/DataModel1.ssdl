@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ImModel.Store" Alias="Self" Provider="Devart.Data.MySql" ProviderManifestToken="MySQL, 5.7.44" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:devart="http://devart.com/schemas/edml/StorageSchemaExtensions/1.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ImEntitiesStoreContainer">
+    <EntitySet Name="accident_levels" EntityType="ImModel.Store.accident_level" store:Type="Tables" Schema="ims" Table="accident_level" />
+    <EntitySet Name="accident_natures" EntityType="ImModel.Store.accident_nature" store:Type="Tables" Schema="ims" Table="accident_nature" />
+    <EntitySet Name="accident_reports" EntityType="ImModel.Store.accident_report" store:Type="Tables" Schema="ims" Table="accident_report" />
+    <EntitySet Name="department_tables" EntityType="ImModel.Store.department_table" store:Type="Tables" Schema="ims" Table="department_table" />
+    <EntitySet Name="document_managements" EntityType="ImModel.Store.document_management" store:Type="Tables" Schema="ims" Table="document_management" />
+    <EntitySet Name="equipment_infos" EntityType="ImModel.Store.equipment_info" store:Type="Tables" Schema="ims" Table="equipment_info" />
+    <EntitySet Name="equipment_maintenance_records" EntityType="ImModel.Store.equipment_maintenance_record" store:Type="Tables" Schema="ims" Table="equipment_maintenance_record" />
+    <EntitySet Name="equipment_maintenance_replacement_spare_parts" EntityType="ImModel.Store.equipment_maintenance_replacement_spare_parts" store:Type="Tables" Schema="ims" Table="equipment_maintenance_replacement_spare_parts" />
+    <EntitySet Name="equipment_types" EntityType="ImModel.Store.equipment_type" store:Type="Tables" Schema="ims" Table="equipment_type" />
+    <EntitySet Name="fault_categories" EntityType="ImModel.Store.fault_category" store:Type="Tables" Schema="ims" Table="fault_category" />
+    <EntitySet Name="installation_location_infos" EntityType="ImModel.Store.installation_location_info" store:Type="Tables" Schema="ims" Table="installation_location_info" />
+    <EntitySet Name="maintenance_levels" EntityType="ImModel.Store.maintenance_level" store:Type="Tables" Schema="ims" Table="maintenance_level" />
+    <EntitySet Name="partner_infos" EntityType="ImModel.Store.partner_info" store:Type="Tables" Schema="ims" Table="partner_info" />
+    <EntitySet Name="spare_part_infos" EntityType="ImModel.Store.spare_part_info" store:Type="Tables" Schema="ims" Table="spare_part_info" />
+    <EntitySet Name="spare_part_inventory_change_histories" EntityType="ImModel.Store.spare_part_inventory_change_history" store:Type="Tables" Schema="ims" Table="spare_part_inventory_change_history" />
+    <EntitySet Name="spare_part_inventory_change_reasons" EntityType="ImModel.Store.spare_part_inventory_change_reason" store:Type="Tables" Schema="ims" Table="spare_part_inventory_change_reason" />
+    <EntitySet Name="spare_part_inventory_checks" EntityType="ImModel.Store.spare_part_inventory_check" store:Type="Tables" Schema="ims" Table="spare_part_inventory_check" />
+    <EntitySet Name="spare_part_inventory_check_details" EntityType="ImModel.Store.spare_part_inventory_check_details" store:Type="Tables" Schema="ims" Table="spare_part_inventory_check_details" />
+    <EntitySet Name="spare_part_types" EntityType="ImModel.Store.spare_part_type" store:Type="Tables" Schema="ims" Table="spare_part_type" />
+    <EntitySet Name="unit_of_measurements" EntityType="ImModel.Store.unit_of_measurement" store:Type="Tables" Schema="ims" Table="unit_of_measurement" />
+    <EntitySet Name="unit_types" EntityType="ImModel.Store.unit_type" store:Type="Tables" Schema="ims" Table="unit_type" />
+    <EntitySet Name="user_info_views" EntityType="ImModel.Store.user_info_view" store:Type="Tables" Schema="ims" Table="user_info_view" />
+  </EntityContainer>
+  <EntityType Name="accident_level">
+    <Documentation>
+      <Summary>浜嬫晠绾у埆</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_level_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>浜嬫晠绾у埆鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="accident_nature">
+    <Documentation>
+      <Summary>浜嬫晠鎬ц川</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_nature_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>浜嬫晠鎬ц川鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="accident_report">
+    <Documentation>
+      <Summary>浜嬫晠鎶ュ憡</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_number" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_date" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>浜嬫晠鏃ユ湡</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_department_id" Type="int">
+      <Documentation>
+        <Summary>浜嬫晠閮ㄩ棬ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_level_id" Type="int">
+      <Documentation>
+        <Summary>浜嬫晠绾у埆ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_nature" Type="int">
+      <Documentation>
+        <Summary>浜嬫晠鎬ц川</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="economic_loss" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁忔祹鎹熷け</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_process" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>浜嬫晠缁忚繃</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accident_investigation" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>浜嬫晠璋冩煡</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="prevention_summary" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>闃茶寖鎬荤粨</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="department_table">
+    <Documentation>
+      <Summary>閮ㄩ棬琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="department_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>閮ㄩ棬鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="document_management">
+    <Documentation>
+      <Summary>鏂囨。绠＄悊</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_number" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="document_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏂囨。鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="document_type" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏂囨。绫诲瀷</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="upload_date" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>涓婁紶鏃ユ湡</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="document_attachment" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏂囨。闄勪欢</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="equipment_info">
+    <Documentation>
+      <Summary>璁惧淇℃伅琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_number" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_name" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="quantity" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>鏁伴噺</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="specification_model" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>瑙勬牸鍨嬪彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_category_id" Type="int">
+      <Documentation>
+        <Summary>璁惧绫诲埆ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_image" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧鍥剧墖</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="manufacturer" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鐢熶骇鍘傚晢</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="total_power" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鎬诲姛鐜?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="distributor" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁忛攢鍟?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_identifier" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧鏍囪瘑</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="purchase_time" Type="text" Nullable="false" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璐疆鏃堕棿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="asset_original_value" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>璧勪骇鍘熷€?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="asset_manager" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璧勪骇璐熻矗浜?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="residual_value_rate" Type="float" Nullable="false" DefaultValue="0.05">
+      <Documentation>
+        <Summary>娈嬪€肩巼</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="depreciation_month" Type="int" Nullable="false" DefaultValue="20">
+      <Documentation>
+        <Summary>鎶樻棫鏈?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_status" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci" devart:DefaultValue="'璁惧姝ｅ父'" DefaultValue="璁惧姝ｅ父">
+      <Documentation>
+        <Summary>璁惧鐘舵€?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="using_department_id" Type="int">
+      <Documentation>
+        <Summary>浣跨敤閮ㄩ棬ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="operator" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鎿嶄綔浜哄憳</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="installation_location" Type="int">
+      <Documentation>
+        <Summary>瀹夎鍦扮偣</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="accumulated_depreciation_months" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>绱鎶樻棫鏈堜唤</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="monthly_depreciation_amount" Type="int">
+      <Documentation>
+        <Summary>鏈堟姌鏃ч</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="net_value" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍑€鍊?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="monthly_depreciation_rate" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏈堟姌鏃х巼</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="equipment_maintenance_record">
+    <Documentation>
+      <Summary>璁惧缁翠慨璁板綍琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_order_number" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁翠慨鍗曞彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="device_number" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_completed" Type="int" DefaultValue="0">
+      <Documentation>
+        <Summary>缁翠慨鏄惁瀹屾垚</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_applicant" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁翠慨鐢宠浜?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="time_of_repair" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>閫佷慨鏃堕棿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="fault_description" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏁呴殰鎻忚堪</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="completion_time" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>瀹屾垚鏃堕棿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_level" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁翠慨绾у埆</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_cost" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁翠慨璐圭敤</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_responsible_person" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁翠慨璐熻矗浜?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="fault_analysis_and_work_details" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏁呴殰鍒嗘瀽鍙婂伐浣滄槑缁?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="rating" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璇勫垎</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="fault_category" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏁呴殰绫诲埆</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="reason_for_rejection" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鎷掔粷鍘熷洜</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="record_count" Type="int">
+      <Documentation>
+        <Summary>璁板綍鏁?</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="equipment_maintenance_replacement_spare_parts">
+    <Documentation>
+      <Summary>璁惧缁翠慨鏇挎崲澶囦欢琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="spare_part_number_id" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囦欢缂栧彿ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_order_number_id" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁翠慨鍗曞彿ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="usage_quantity" Type="int">
+      <Documentation>
+        <Summary>浣跨敤鏁伴噺</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="usage_date" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>浣跨敤鏃ユ湡</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="equipment_type">
+    <Documentation>
+      <Summary>璁惧绫诲瀷</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="equipment_type_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁惧绫诲瀷鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="fault_category">
+    <Documentation>
+      <Summary>鏁呴殰绫诲埆</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="fault_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鏁呴殰鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="installation_location_info">
+    <Documentation>
+      <Summary>瀹夎鍦扮偣淇℃伅</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="location_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍦扮偣鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="maintenance_level">
+    <Documentation>
+      <Summary>缁翠慨绾у埆</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="maintenance_level_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁翠慨绾у埆鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="partner_info">
+    <Documentation>
+      <Summary>鍚堜綔鍗曚綅淇℃伅</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="unit_number" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍗曚綅缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="unit_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍗曚綅鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="unit_type_id" Type="int">
+      <Documentation>
+        <Summary>鍗曚綅绫诲瀷ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="contact_person" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鑱旂郴浜?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="contact_phone" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鑱旂郴鐢佃瘽</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="fax" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>浼犵湡</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="tax_number" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>绋庡彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="address" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍦板潃</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="postal_code" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>閭紪</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="email" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鐢靛瓙淇＄</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="bank_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>寮€鎴烽摱琛?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="account" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璐︽埛</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="total_partners" Type="int">
+      <Documentation>
+        <Summary>鍚堜綔鍗曚綅鎬绘暟</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="spare_part_info">
+    <Documentation>
+      <Summary>澶囦欢淇℃伅琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="spare_part_number" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囦欢缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="spare_part_name" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囦欢鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="specification_model" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>瑙勬牸鍨嬪彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="spare_part_image" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囦欢鍥剧墖</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="spare_part_type_id" Type="int">
+      <Documentation>
+        <Summary>澶囦欢绫诲瀷ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="unit_of_measurement" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>璁￠噺鍗曚綅</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="unit_price" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍗曚环</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="manufacturer" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鐢熶骇鍘傚晢</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="distributor" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁忛攢鍟?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="storage_location" Type="int">
+      <Documentation>
+        <Summary>瀛樻斁浣嶇疆</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="current_inventory" Type="int">
+      <Documentation>
+        <Summary>褰撳墠搴撳瓨</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="spare_part_inventory_change_history">
+    <Documentation>
+      <Summary>澶囦欢搴撳瓨鍙樺寲鍘嗗彶</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="spare_part_number" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囦欢缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="operator" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鎿嶄綔浜?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="operation_time" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鎿嶄綔鏃堕棿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="inventory_change_type" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍑哄叆搴撶被鍨?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="inventory_change_reason_id" Type="int">
+      <Documentation>
+        <Summary>搴撳瓨鍙樺寲鍘熷洜ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="initial_inventory" Type="int">
+      <Documentation>
+        <Summary>鏈熷垵搴撳瓨</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="change_quantity" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍙樺寲鏁伴噺</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="change_history_total" Type="int">
+      <Documentation>
+        <Summary>鍙樺寲鍘嗗彶鍚堣</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="spare_part_inventory_change_reason">
+    <Documentation>
+      <Summary>澶囦欢搴撳瓨鍙樺寲鍘熷洜琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="inventory_change_type" Type="int">
+      <Documentation>
+        <Summary>搴撳瓨鍙樺寲绫诲瀷</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="change_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍙樺寲鍚嶇О</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="spare_part_inventory_check">
+    <Documentation>
+      <Summary>澶囦欢搴撳瓨鐩樼偣琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="check_number" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鐩樼偣缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="check_date" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鐩樼偣鏃ユ湡</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="operator" Type="text" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鎿嶄綔浜?</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="spare_part_inventory_check_details">
+    <Documentation>
+      <Summary>澶囦欢搴撳瓨鐩樼偣鏄庣粏琛?</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="check_id" Type="int">
+      <Documentation>
+        <Summary>鐩樼偣ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="spare_part_number" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囦欢缂栧彿</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="inventory_quantity" Type="int">
+      <Documentation>
+        <Summary>搴撳瓨鏁伴噺</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="actual_count_quantity" Type="int">
+      <Documentation>
+        <Summary>瀹炵洏鏁伴噺</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="spare_part_type">
+    <Documentation>
+      <Summary>澶囦欢绫诲瀷</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="unit_of_measurement">
+    <Documentation>
+      <Summary>璁￠噺鍗曚綅</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="unit_type">
+    <Documentation>
+      <Summary>鍚堜綔鍗曚綅绫诲瀷</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false">
+      <Documentation>
+        <Summary>ID</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="unit_type_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍗曚綅绫诲瀷鍚?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="remarks" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>澶囨敞</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+  <EntityType Name="user_info_view">
+    <Documentation>
+      <Summary>鐢ㄦ埛淇℃伅瑙嗗浘</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" Nullable="false" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鐢ㄦ埛鍚?</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="full_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>鍏ㄥ悕</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="email" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>閭欢</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="active" Type="int">
+      <Documentation>
+        <Summary>鏈夋晥</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="role" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>瑙掕壊</Summary>
+      </Documentation>
+    </Property>
+    <Property Name="organization_superior" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
+      <Documentation>
+        <Summary>缁勭粐涓婄骇</Summary>
+      </Documentation>
+    </Property>
+  </EntityType>
+</Schema>

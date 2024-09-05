@@ -2,6 +2,7 @@
 using InventoryManagementSystem.ViewModels.Pages;
 using InventoryManagementSystem.ViewModels.Windows;
 using InventoryManagementSystem.Views.Pages;
+using InventoryManagementSystem.Views.Pages.设备管理页面;
 using InventoryManagementSystem.Views.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -52,6 +53,10 @@ namespace InventoryManagementSystem
                 services.AddSingleton<DataViewModel>();
                 services.AddSingleton<SettingsPage>();
                 services.AddSingleton<SettingsViewModel>();
+                services.AddSingleton<设备信息管理>();
+                services.AddSingleton<设备折旧报表>();
+
+
             }).Build();
 
         /// <summary>

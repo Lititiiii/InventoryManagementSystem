@@ -11,17 +11,20 @@ namespace InventoryManagementSystem.ViewModels.Windows
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()
         {
+            
             new NavigationViewItem()
             {
-                Content = "Home",
-                Icon = new SymbolIcon { Symbol = SymbolRegular.Home24 },
-                TargetPageType = typeof(Views.Pages.DashboardPage)
-            },
-            new NavigationViewItem()
-            {
-                Content = "Data",
+                Content = "设备信息管理",
                 Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
-                TargetPageType = typeof(Views.Pages.DataPage)
+                
+                MenuItemsSource = new object[]{
+                    new NavigationViewItem()
+                    {
+                        Content = "设备信息",
+                        Icon = new SymbolIcon { Symbol = SymbolRegular.DataHistogram24 },
+                        TargetPageType = typeof(Views.Pages.设备管理页面.设备信息管理),
+                    },
+                }
             }
         };
 
