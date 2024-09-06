@@ -10,6 +10,8 @@ using Microsoft.Extensions.Hosting;
 using System.IO;
 using System.Reflection;
 using System.Windows.Threading;
+using InventoryManagementSystem.Views.Pages.基本信息设置;
+using InventoryManagementSystem.Views.Pages.设备类型管理页面;
 using Wpf.Ui;
 
 namespace InventoryManagementSystem
@@ -35,7 +37,7 @@ namespace InventoryManagementSystem
                 services.AddSingleton<IPageService, PageService>();
 
                 // Theme manipulation
-                services.AddSingleton<IThemeService, ThemeService>();
+              
 
                 // TaskBar manipulation
                 services.AddSingleton<ITaskBarService, TaskBarService>();
@@ -49,13 +51,11 @@ namespace InventoryManagementSystem
 
                 services.AddSingleton<DashboardPage>();
                 services.AddSingleton<DashboardViewModel>();
-                services.AddSingleton<DataPage>();
-                services.AddSingleton<DataViewModel>();
-                services.AddSingleton<SettingsPage>();
-                services.AddSingleton<SettingsViewModel>();
+
                 services.AddSingleton<设备信息管理>();
                 services.AddSingleton<设备折旧报表>();
-
+                services.AddSingleton<供应商管理>();
+                services.AddSingleton<设备类型列表>();
 
             }).Build();
 

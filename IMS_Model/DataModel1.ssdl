@@ -201,7 +201,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false">
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity">
       <Documentation>
         <Summary>ID</Summary>
       </Documentation>
@@ -226,7 +226,7 @@
         <Summary>瑙勬牸鍨嬪彿</Summary>
       </Documentation>
     </Property>
-    <Property Name="device_category_id" Type="int">
+    <Property Name="device_category_id" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
       <Documentation>
         <Summary>璁惧绫诲埆ID</Summary>
       </Documentation>
@@ -296,7 +296,7 @@
         <Summary>鎿嶄綔浜哄憳</Summary>
       </Documentation>
     </Property>
-    <Property Name="installation_location" Type="int">
+    <Property Name="installation_location" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
       <Documentation>
         <Summary>瀹夎鍦扮偣</Summary>
       </Documentation>
@@ -455,11 +455,7 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false">
-      <Documentation>
-        <Summary>ID</Summary>
-      </Documentation>
-    </Property>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="equipment_type_name" Type="varchar" MaxLength="255" Collation="utf8mb4_general_ci">
       <Documentation>
         <Summary>璁惧绫诲瀷鍚嶇О</Summary>

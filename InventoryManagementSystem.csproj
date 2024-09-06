@@ -16,8 +16,13 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
-    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="Devart.Data" Version="6.0.21" />
+    <PackageReference Include="Devart.Data.MySql" Version="9.3.21" />
+    <PackageReference Include="Devart.Data.MySql.EF6" Version="9.3.21" />
+    <PackageReference Include="Devart.Data.MySql.Linq" Version="5.1.21" />
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
     <PackageReference Include="EntityFramework.zh-Hans" Version="6.2.0" />
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
     <PackageReference Include="MySql.Data" Version="9.0.0" />
     <PackageReference Include="WPF-UI" Version="3.0.5" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0 " />
@@ -85,6 +90,7 @@
 
   <ItemGroup>
     <Folder Include="IMS_Model\" />
+    <Folder Include="Views\Pages\备件管理\" />
   </ItemGroup>
 
 </Project>

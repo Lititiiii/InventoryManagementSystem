@@ -1,0 +1,251 @@
+﻿<Window
+    x:Class="InventoryManagementSystem.Views.Pages.基本信息设置.新增供应商"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:InventoryManagementSystem.Views.Pages.基本信息设置"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="新增供应商"
+    Width="800"
+    Height="600"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel
+            Margin="71,31,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+            <ui:TextBlock
+                Height="18"
+                Text="单位编号"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="单位编号_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="71,141,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="单位类型"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="单位类型_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="71,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="单位名称"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="单位名称_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="95,298,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="传真"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="传真_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="71,252,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="联系电话"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="联系电话_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="83,197,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="联系人"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="联系人_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="508,31,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+            <ui:TextBlock
+                Height="18"
+                Text="税号"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="税号_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="508,141,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="邮编"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="邮编_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="508,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="地址"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="地址_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="508,298,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="账户"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="账户_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="484,249,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="开户银行"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="开户银行_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <StackPanel
+            Margin="484,194,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Orientation="Horizontal">
+
+            <ui:TextBlock
+                Height="18"
+                Text="电子信箱"
+                TextWrapping="Wrap" />
+            <ui:TextBox
+                Name="电子信箱_TextBox"
+                Width="123"
+                Margin="20,0,0,0"
+                Text="TextBox"
+                TextWrapping="Wrap" />
+
+        </StackPanel>
+        <ui:TextBox
+            Name="供应商备注_TextBox"
+            Height="151"
+            Margin="140,338,125,96"
+            Text="这是一个供应商备注" />
+        <ui:TextBlock
+            Margin="95,349,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="备注"
+            TextWrapping="Wrap" />
+        <ui:Button
+            Name="提交供应商_Button"
+            Margin="292,515,0,0"
+            VerticalAlignment="Top"
+            Click="提交供应商_Button_Click"
+            Content="提交" />
+        <ui:Button
+            Name="取消"
+            Margin="400,515,0,0"
+            VerticalAlignment="Top"
+            Content="取消" />
+    </Grid>
+</Window>

@@ -28,6 +28,7 @@
         <TextBlock Margin="0,12,0,0" Text="Theme" />
         <RadioButton
             Margin="0,12,0,0"
+            Checked="RadioButton_Checked"
             Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
             CommandParameter="theme_light"
             Content="Light"
