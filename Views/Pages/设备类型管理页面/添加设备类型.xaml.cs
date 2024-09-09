@@ -51,5 +51,10 @@ namespace InventoryManagementSystem.Views.Pages.设备类型管理页面
         {
             this.Close();
         }
+
+        private void 设备类型_TextBox_TextChanged()
+        {
+
+        }
     }
 }

@@ -39,10 +39,10 @@ namespace InventoryManagementSystem.Views.Pages.设备管理页面
                 设备类别_ComboBox.Items.Add(item.EquipmentTypeName);
             }
         }
-        public 设备信息添加页面(EquipmentInfo equipmentInfos, ObservableCollection<EquipmentType> equipmenttypes)
+        public 设备信息添加页面(EquipmentInfo equipmentInfos, ObservableCollection<EquipmentType> equipmenttypes ,Int32 equipmentInfos_Id)
         {
             InitializeComponent();
-            提交设备信息_Button.Click += 修改设备信息_Click;
+            提交设备信息_Button.Click += (sender, e) =>修改设备信息_Click(sender, e, equipmentInfos_Id);
             _equipmentInfos = equipmentInfos;
             foreach (var item in equipmenttypes.ToList())
             {
@@ -71,43 +71,41 @@ namespace InventoryManagementSystem.Views.Pages.设备管理页面
 
         }
 
-        private void 提交设备信息_Click(object sender, RoutedEventArgs e)
+        private void 提交设备信息_Click(object sender, RoutedEventArgs e )
         {
            
             Int32 _Quantity              =0;
-           
-            Double _ResidualValueRate    =0;
             Int32 _UsingDepartmentId     =0;
-
+            Int32 _AssetOriginalValue = 0;
+            Double _ResidualValueRate = 0;
 
             try
             {
-                
                 _Quantity = Convert.ToInt32(购买数量_TextBox.Text);
-                
-                _ResidualValueRate = Convert.ToDouble(净残率_TextBox.Text);
                 _UsingDepartmentId = Convert.ToInt32(使用部门_TextBox.Text);
-                MessageBox.Show($"购买数量: {_Quantity}, 净残率: {_ResidualValueRate}");
+                _AssetOriginalValue = Convert.ToInt32(净残率_TextBox.Text);
+                _ResidualValueRate = Convert.ToDouble(设备价格_TextBox.Text);
             }
             catch (FormatException ex)
             {
                 // 检查每个 TextBox 的值，找出哪个有误
-                if (!ulong.TryParse(设备类别_ComboBox.Text, out _))
+                if (!ulong.TryParse(购买数量_TextBox.Text, out _))
                 {
-                    MessageBox.Show("设备类别输入格式错误。");
+                    MessageBox.Show("购买数量 格式错误。");
                 }
-                else if (!ulong.TryParse(购买数量_TextBox.Text, out _))
+                else if (!ulong.TryParse(使用部门_TextBox.Text, out _))
                 {
-                    MessageBox.Show("购买数量输入格式错误。");
+                    MessageBox.Show("使用部门 格式错误。");
                 }
-                else if (!ulong.TryParse(安装地点_TextBox.Text, out _))
+                else if (!ulong.TryParse(设备价格_TextBox.Text, out _))
                 {
-                    MessageBox.Show("安装地点输入格式错误。");
+                    MessageBox.Show("设备价格 格式错误。");
                 }
                 else if (!double.TryParse(净残率_TextBox.Text, out _))
                 {
-                    MessageBox.Show("净残率输入格式错误。");
+                    MessageBox.Show("净残率 格式错误。");
                 }
+               
                 return;
             }
             catch (OverflowException)
@@ -131,19 +129,20 @@ namespace InventoryManagementSystem.Views.Pages.设备管理页面
             var _Remarks = 备注_TextBox.Text;
             var _TotalPower = 总功率_TextBox.Text;
             var _DeviceNumber = 购买数量_TextBox.Text;
-
+            
             using (var context = new ImEntities())
             {
                
                 var equipmentInfo = new EquipmentInfo
                 {
-                   
+                    
                     DeviceCategoryId = _DeviceCategoryId,
                     Quantity = _Quantity,
                     InstallationLocation = _InstallationLocation,
                     ResidualValueRate =(float)_ResidualValueRate,
                     UsingDepartmentId = _UsingDepartmentId,
                     DeviceNumber = _DeviceNumber,
+                    AssetOriginalValue = _AssetOriginalValue,
 
 
                     SpecificationModel = _SpecificationModel,
@@ -168,41 +167,9 @@ namespace InventoryManagementSystem.Views.Pages.设备管理页面
             }
         }
 
-        private void 修改设备信息_Click(object sender, RoutedEventArgs e)
+        private void 修改设备信息_Click(object sender, RoutedEventArgs e, Int32 equipmentInfos_Id)
         {
-            Int32 _Quantity = 0;
-            Double _ResidualValueRate = 0;
-            Int32 _UsingDepartmentId = 0;
-            try
-            {
-               
-                _Quantity = Convert.ToInt32(购买数量_TextBox.Text);
-                
-                _ResidualValueRate = Convert.ToDouble(净残率_TextBox.Text);
-                _UsingDepartmentId = Convert.ToInt32(使用部门_TextBox.Text);
-
-            }
-            catch (FormatException ex)
-            {
-                // 检查每个 TextBox 的值，找出哪个有误
-                if (!ulong.TryParse(购买数量_TextBox.Text, out _))
-                {
-                    MessageBox.Show("购买数量输入格式错误。");
-                }
-                else if (!ulong.TryParse(安装地点_TextBox.Text, out _))
-                {
-                    MessageBox.Show("安装地点输入格式错误。");
-                }
-                else if (!double.TryParse(净残率_TextBox.Text, out _))
-                {
-                    MessageBox.Show("净残率输入格式错误。");
-                }
-                return;
-            }
-            catch (OverflowException)
-            {
-                MessageBox.Show("年龄超出范围。");
-            }
+          
 
             var _InstallationLocation = 安装地点_TextBox.Text;
             var _DeviceCategoryId = 设备类别_ComboBox.Text;
@@ -220,19 +187,59 @@ namespace InventoryManagementSystem.Views.Pages.设备管理页面
             var _Remarks = 备注_TextBox.Text;
             var _TotalPower = 总功率_TextBox.Text;
             var _DeviceNumber = 购买数量_TextBox.Text;
+            Int32 _Quantity = 0;
+            Int32 _UsingDepartmentId = 0;
+            Int32 _AssetOriginalValue = 0;
+            Double _ResidualValueRate = 0;
+            try
+            {
+                _Quantity = Convert.ToInt32(购买数量_TextBox.Text);
+                _UsingDepartmentId = Convert.ToInt32(使用部门_TextBox.Text);
+                _AssetOriginalValue = Convert.ToInt32(净残率_TextBox.Text);
+                _ResidualValueRate = Convert.ToDouble(设备价格_TextBox.Text);
+            }
+            catch (FormatException ex)
+            {
+                // 检查每个 TextBox 的值，找出哪个有误
+                if (!ulong.TryParse(购买数量_TextBox.Text, out _))
+                {
+                    MessageBox.Show("购买数量 格式错误。");
+                }
+                else if (!ulong.TryParse(使用部门_TextBox.Text, out _))
+                {
+                    MessageBox.Show("使用部门 格式错误。");
+                }
+                else if (!ulong.TryParse(设备价格_TextBox.Text, out _))
+                {
+                    MessageBox.Show("设备价格 格式错误。");
+                }
+                else if (!double.TryParse(净残率_TextBox.Text, out _))
+                {
+                    MessageBox.Show("净残率 格式错误。");
+                }
+
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("年龄超出范围。");
+            }
+
+
 
             using (var context = new ImEntities())
             {
 
                 var equipmentInfo = new EquipmentInfo
                 {
-
+                    Id = equipmentInfos_Id,
                     DeviceCategoryId = _DeviceCategoryId,
                     Quantity = _Quantity,
                     InstallationLocation = _InstallationLocation,
                     ResidualValueRate = (float)_ResidualValueRate,
                     UsingDepartmentId = _UsingDepartmentId,
                     DeviceNumber = _DeviceNumber,
+                    AssetOriginalValue = _AssetOriginalValue,
 
 
                     SpecificationModel = _SpecificationModel,

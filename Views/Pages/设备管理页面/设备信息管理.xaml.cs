@@ -86,7 +86,7 @@ namespace InventoryManagementSystem.Views.Pages.设备管理页面
             var button = sender as Button;
             var dataContext = button?.DataContext as EquipmentInfo; // 获取当前行的数据上下文
             var department = context.EquipmentInfos.FirstOrDefault(d => d.Id == dataContext.Id); // 使用 FirstOrDefault 查找
-            var formWindow = new 设备信息添加页面(department, equipmenttypes);
+            var formWindow = new 设备信息添加页面(department, equipmenttypes, dataContext.Id);
             formWindow.EquipmentInfoSubmitted += 编辑设备类型_window_EquipmentInfoSubmittedSubmitted;
             formWindow.ShowDialog(); // 以对话框形式打开
         }
@@ -99,10 +99,12 @@ namespace InventoryManagementSystem.Views.Pages.设备管理页面
         }
         void 编辑设备类型_window_EquipmentInfoSubmittedSubmitted(object? sender, EquipmentInfo e)
         {
-            var obs_entity = equipmentinfos.FirstOrDefault(a=>a.Id==e.Id);
-            equipmentinfos[e.Id] = e;
 
-            
+            var obs_entity = equipmentinfos.FirstOrDefault(a=>a.Id==e.Id);
+            equipmentinfos[equipmentinfos.IndexOf(obs_entity)]  = e;
+            var equipmentToUpdate = context.EquipmentInfos.FirstOrDefault(a => a.Id == e.Id);
+            context.EquipmentInfos.ApplyCurrentValues(e);
+            context.SaveChanges();
         }
 
     }
